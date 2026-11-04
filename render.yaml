@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: value-engine-football
+    runtime: docker
+    plan: starter
+    healthCheckPath: /health
+    envVars:
+      - key: APISPORTS_KEY
+        sync: false
+      - key: ODDS_API_KEY
+        sync: false
+      - key: ODDS_REGIONS
+        value: eu,uk
+      - key: ODDS_SPORT_KEYS
+        value: soccer_epl,soccer_turkey_super_league,soccer_germany_bundesliga,soccer_spain_la_liga,soccer_italy_serie_a,soccer_france_ligue_one,soccer_uefa_champs_league

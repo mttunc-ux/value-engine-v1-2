@@ -1,0 +1,17 @@
+VALUE ENGINE — CHROME KURULUMU
+
+YEREL KULLANIM
+1) Python 3.11+ kurun.
+2) backend/.env.example dosyasını backend/.env olarak kopyalayın.
+3) .env içine API-Football anahtarınızı (APISPORTS_KEY) ve varsa The Odds API anahtarınızı (ODDS_API_KEY) girin.
+4) Terminalde backend klasörüne girin:
+   pip install -r requirements.txt
+   uvicorn main:app --host 127.0.0.1 --port 8000
+5) Chrome'da http://127.0.0.1:8000 adresini açın.
+6) API kontrolü: http://127.0.0.1:8000/health
+
+İNTERNET ÜZERİNDEN URL
+README_DEPLOY_TR.md dosyasındaki Render + GitHub dağıtım adımlarını uygulayın. Deploy sonrası Render size HTTPS URL verecektir. Bu sohbetten sizin hesabınıza erişip deploy yapamadığım için şu anda herkese açık bir URL oluşturulmuş değildir.
+
+DOĞRULUK SINIRI
+Bu beta; API-Football sezon gol ortalamalarıyla geçici Poisson/Dixon-Coles modeli kurar. Gerçek xG modeli veya geçmişte kalibre edilmiş bir tahmin sistemi değildir. The Odds API'den eşleşme bulunursa h2h, yarım çizgili totals ve BTTS oranlarını karşılaştırır. Kart, korner, İY/MS ve oyuncu marketleri bu sürümde modellenmez. Eksik veride uydurma tahmin üretmek yerine kapsam dışı bırakılır.
